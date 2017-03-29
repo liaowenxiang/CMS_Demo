@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Keywords" content="3D模型">
+    <meta name="Description" content="利用css3+js面向对象编程搭建3D城市模型">
+    <title>Title</title>
+</head>
+<style type="text/css">
+    *{margin: 0px}
+    div,b,i{
+        transform-style: preserve-3d;position: absolute;height: 100%;
+    }
+    #City3D{background: green;border: 30px solid burlywood;
+        top: 0;bottom: 0;left: 0;right: 0;margin: auto;
+        animation: transformCity 10s linear infinite}
+    #City3D div b{
+        background: blue;transform: rotateX(90deg);
+        transform-origin: 0 0;
+    }
+    #City3D div b>b{
+        background: yellow;transform: rotateY(90deg);
+        transform-origin: 0 0;
+    }
+    #City3D div b>b>b{
+        background: palevioletred;transform: rotateY(90deg);
+        transform-origin: 100% 0;right: 0px;
+    }
+    #City3D div b>b>b>b{
+        background: orange;transform: rotateY(90deg);
+        transform-origin: 0 100%;left: 0px;
+    }
+    #City3D div b>b>b>b>i{
+        background: cornsilk;transform: rotateX(-90deg);
+        transform-origin: 0 100%;bottom: 0px;
+    }
+
+    @keyframes transformCity {
+        from{transform: rotateX(60deg) rotateZ(180deg)}
+        to{transform: rotateX(60deg) rotateZ(-180deg)}
+    }
+</style>
+<body>
+<!--    &lt;!&ndash;//地皮&ndash;&gt;
+    <div id="City3D">
+        &lt;!&ndash;//楼&ndash;&gt;
+        <div style="height: 150px;left: 0px;top: 0px;background: green">
+            &lt;!&ndash;墙&ndash;&gt;
+            <b style="width: 30px">
+                <b style="width: 20px">
+                    <b style="width: 30px">
+                        <b style="width: 20px">
+                            <i style="width: 20px;height: 30px"></i>
+                        </b>
+                    </b>
+                </b>
+            </b>
+        </div>
+    </div>-->
+    <script type="text/javascript">
+        //城市类
+        function City3D(base) {
+            this.base=base;
+            this.max=70;/*建筑最大面积应大于40*/
+        }
+        City3D.prototype.genHeight=function () {
+            return (Math.random()*1000<<2)%130+20;
+        }
+        City3D.prototype.genSize=function () {
+            return (Math.random()*1000<<2)%20+(this.max-40);
+        }
+        City3D.prototype.genPosition=function (i) {
+            return (Math.random()*1000<<2)%20+this.max*i;
+        }
+        //创建地皮
+        City3D.prototype.buildArea=function(parent){
+            this.city=document.createElement("div");
+            this.city.id="City3D";
+            this.city.style.height=this.city.style.width=this.base*this.max+"px";
+            parent.appendChild(this.city);
+        }
+        //创建大楼
+        City3D.prototype.buildEstate=function (top,left) {
+            var estate = document.createElement("div");
+            estate.style.height=this.genHeight()+"px";
+            estate.style.left=left+"px";
+            estate.style.top=top+"px";
+            var w=this.genSize();
+            var l=this.genSize();
+            this.city.appendChild(estate);
+
+            var b=estate;
+            for(var i=0;i<4;i++){
+                var a = document.createElement("b");
+                if(i%2==0){
+                    a.style.width=w+"px";
+                }else{
+                    a.style.width=l+"px";
+                }
+                b.appendChild(a);
+                b=a;
+            }
+            var b5 = document.createElement("i");
+            b5.style.width=l+"px";
+            b5.style.height=w+"px"
+            b.appendChild(b5);
+        }
+        City3D.prototype.build=function (parent) {
+            this.buildArea(parent);
+            for(var i=0;i<this.base;i++){
+                for(var j=0;j<this.base;j++){
+                    this.buildEstate(this.genPosition(i),this.genPosition(j));
+                }
+            }
+        }
+        new City3D(6).build(document.body);
+    </script>
+</body>
+</html>

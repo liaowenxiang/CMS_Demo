@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Keywords" content="关键字，关键词">
+    <meta name="Description" content="描述信息">
+    <title>Title</title>
+</head>
+<style type="text/css">
+    body{
+        overflow: hidden;
+    }
+    *{
+        margin: 0px;
+    }
+    #content{
+        width: 100px;height: 100px;position: absolute;right: 0px;left: 0px;bottom: 0px;
+        top: 0px;margin: auto;transform-style:preserve-3d;animation: spin 3s linear infinite;
+    }
+    .d{
+        width: 100px;height: 100px;background: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1490548737242&di=e1defe9a4babb6bf7a7149ed658e1d26&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F13%2F27%2F12%2F58PIC9Y58PICnt8_1024.jpg");text-align: center;line-height: 100px;
+        font-size: 50px;position: absolute;
+    }
+    .d1{
+        animation: ranA 3s linear infinite;top:100px;
+    }
+    .d11{
+        animation: ranA 3s 1s linear infinite;opacity: 0;
+    }
+    .d111{
+        animation: ranA 3s 2s linear infinite;opacity: 0;
+    }
+    .d2{
+        animation: ranB 3s linear infinite;top:0px;
+    }
+    .d22{
+        animation: ranB 3s 1s linear infinite;opacity: 0;
+    }
+    .d222{
+        animation: ranB 3s 2s linear infinite;opacity: 0;
+    }
+    .d3{
+        left:-50px;top:50px;animation: ranC 3s linear infinite;
+    }
+    .d33{
+        animation: ranC 3s 1s linear infinite;opacity: 0;
+    }
+    .d333{
+        animation: ranC 3s 2s linear infinite;opacity: 0;
+    }
+    .d4{
+        right:-50px;top:50px;animation: ranD 3s linear infinite;
+    }
+    .d44{
+        animation: ranD 3s 1s linear infinite;opacity: 0;
+    }
+    .d444{
+        animation: ranD 3s 2s linear infinite;opacity: 0;
+    }
+    @keyframes ranA {
+        from{transform: perspective(10px) rotateX(12.5deg) rotateZ(180deg) translateY(200px); opacity:1}
+        to{transform: perspective(10px) rotateX(12.5deg) rotateZ(180deg) translateY(-100px);opacity: 1 }
+    }
+    @keyframes ranB {
+        from{transform: perspective(10px) rotateX(-12.5deg) translateY(200px); opacity:1}
+        to{transform: perspective(10px) rotateX(-12.5deg) translateY(-100px);opacity: 1 }
+    }
+    @keyframes ranC {
+        from{transform: perspective(10px) rotateX(0deg) rotateY(12.5deg) rotateZ(-90deg) translateY(200px); opacity:1}
+        to{transform: perspective(10px) rotateX(0deg) rotateY(12.5deg) rotateZ(-90deg) translateY(-100px);opacity: 1 }
+    }
+    @keyframes ranD {
+        from{transform: perspective(10px) rotateX(0deg) rotateY(-12.5deg) rotateZ(90deg) translateY(200px); opacity:1}
+        to{transform: perspective(10px) rotateX(0deg) rotateY(-12.5deg) rotateZ(90deg) translateY(-100px);opacity: 1 }
+    }
+    @keyframes spin {
+        from{transform: rotate(0deg) }
+        to{transform: rotate(360deg) }
+    }
+</style>
+<body>
+    <div id="content">
+        <div class="d d1">A</div>
+        <div class="d d1 d11">A</div>
+        <div class="d d1 d111">A</div>
+        <div class="d d2">A</div>
+        <div class="d d2 d22">A</div>
+        <div class="d d2 d222">A</div>
+        <div class="d d3">A</div>
+        <div class="d d3 d33">A</div>
+        <div class="d d3 d333">A</div>
+        <div class="d d4">A</div>
+        <div class="d d4 d44">A</div>
+        <div class="d d4 d444">A</div>
+    </div>
+</body>
+
+</html>

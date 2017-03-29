@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html charset=utf-8" >
+    <meta name="Keywords" content="购物车">
+    <meta name="Description" content="天猫购物车">
+    <title>天猫购物车</title>
+    <style type="text/css">
+        *{margin: 0px;padding: 0px}
+        body{font-size: 12px;font-family: "微软雅黑";color: #666;}
+        .top{width: 100%;height: 85px;/*background: orange;*/}
+        .top .t-header{width: 1000px;height: 85px;background: #fff;margin: 0 auto;}
+        .top .t-header .t-logo{float: left;margin-top: 18px}
+        .top .t-header .t-desc{float: right;line-height: 85px;font-size: 22px}
+
+        .banner{width: 100%;height: 160px;background: url("images/bg1.png")}
+
+        .shop{width: 1000px;height: 400px;margin: 30px auto;}
+        .shop ul li{list-style: none;border: 1px solid #e1e1e1;width: 220px;
+            padding: 5px;float: left;margin: 5px}
+        .shop ul li:hover{border: 1px solid red;}
+        .shop ul li .s-price{font-size: 22px;color: red}
+        .shop ul li .s-title{font-size: 14px;line-height: 22px;text-overflow: ellipsis ;white-space:nowrap;overflow: hidden}
+        .shop ul li .s-add{width: 220px;height: 40px;display: block;background: #00c901;
+            text-align: center;text-decoration: none;font-size: 14px;color: #ffffff;
+            border-radius: 3px;line-height: 40px}
+        .shop ul li .s-add:hover{background: #00b000}
+
+        .car{width: 260px;height: 100%;background: #eee;position: fixed;
+            top:0px;right: -225px}
+        /*#tmall-car:hover{animation: show 1s}*/
+        .car .c-tools{width: 35px;height: 100%;background: #000;padding-top: 250px;float: left}
+        .car .c-tools a{display: block;font-size: 14px;padding: 20px 0;color: #fff;
+            text-decoration: none}
+        .car .c-tools a:hover{background: #f30;}
+        .car .c-tools a .c-icon{background: url("images/car.png");display: block;
+            width: 35px;height: 35px}
+        .car .c-tools a .c-text{width:15px;margin: 0 auto;display: block}
+        .car .c-con{width: 225px;height: 100%;float: right}
+        .car .c-con ul li{list-style:none;background: #fff;margin: 10px 0;padding: 3px}
+
+        .car .c-con .c-btn{width: 225px;height: 40px;display: block;background: #f60;
+            text-align: center;line-height: 40px;text-decoration: none;font-size: 16px;
+            color: #fff;position: absolute;bottom: 0px;right: 0px;}
+        .car .c-con .c-btn:hover{background: #df5900;}
+
+        @keyframes show {
+            from{right: -225px}
+            to{right: 0px}
+        }
+    </style>
+</head>
+<body>
+    <div class="top">
+        <div class="t-header">
+            <div class="t-logo">
+                <a href="javascript:;">
+                    <!--宽高必须写在页面标签上，节省浏览器计算时间-->
+                    <img src="images/timg.jpg" alt="上天猫就购了" width="200px" height="50px">
+                </a>
+            </div>
+            <div class="t-desc">天猫购物车支付系统</div>
+        </div>
+    </div>
+
+    <div class="banner">
+
+    </div>
+
+    <div class="shop">
+        <ul>
+            <li>
+                <a href="javascript:;">
+                    <img src="images/1.jpg" alt="连衣裙" width="220" height="220">
+                </a>
+                <p class="s-price"><span>234</span>￥</p>
+                <p class="s-title">描述</p>
+                <a class="s-add" href="javascript:;">加入购物车</a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <img src="images/2.jpg" alt="vero moda夏季个性印花捏褶连衣裙" width="220" height="220">
+                </a>
+                <p class="s-price"><span>384</span>￥</p>
+                <p class="s-title">vero moda夏季个性印花捏褶连衣裙</p>
+                <a class="s-add" href="javascript:;">加入购物车</a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <img src="images/3.jpg" alt="only露肩翻领高腰系带a字连衣裙" width="220" height="220">
+                </a>
+                <p class="s-price"><span>980</span>￥</p>
+                <p class="s-title">only露肩翻领高腰系带a字连衣裙</p>
+                <a class="s-add" href="javascript:;">加入购物车</a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <img src="images/4.jpg" alt="【迪士尼美女与野兽】Five Plus2017新" width="220" height="220">
+                </a>
+                <p class="s-price"><span>1280</span>￥</p>
+                <p class="s-title">【迪士尼美女与野兽】Five Plus2017新</p>
+                <a class="s-add" href="javascript:;">加入购物车</a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <img src="images/5.jpg" alt="【季中价349元】ochirly欧时力棉质不" width="220" height="220">
+                </a>
+                <p class="s-price"><span>388</span>￥</p>
+                <p class="s-title">【季中价349元】ochirly欧时力棉质不</p>
+                <a class="s-add" href="javascript:;">加入购物车</a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <img src="images/6.jpg" alt="ZARA 女装 蕾丝拼接连衣裙 01639052" width="220" height="220">
+                </a>
+                <p class="s-price"><span>648</span>￥</p>
+                <p class="s-title">ZARA 女装 蕾丝拼接连衣裙 01639052</p>
+                <a class="s-add" href="javascript:;">加入购物车</a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <img src="images/7.jpg" alt="雅莹专柜时尚简约显瘦条纹圆领连衣裙" width="220" height="220">
+                </a>
+                <p class="s-price"><span>258</span>￥</p>
+                <p class="s-title">雅莹专柜时尚简约显瘦条纹圆领连衣裙</p>
+                <a class="s-add" href="javascript:;">加入购物车</a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <img src="images/8.jpg" alt="MO&Co.中袖罗纹立领收腰刺绣隐形拉" width="220" height="220">
+                </a>
+                <p class="s-price"><span>1380</span>￥</p>
+                <p class="s-title">MO&Co.中袖罗纹立领收腰刺绣隐形拉</p>
+                <a class="s-add" href="javascript:;">加入购物车</a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <img src="images/9.jpg" alt="可可尼2017夏装新品女装彩绘印花连衣" width="220" height="220">
+                </a>
+                <p class="s-price"><span>780</span>￥</p>
+                <p class="s-title">可可尼2017夏装新品女装彩绘印花连衣</p>
+                <a class="s-add" href="javascript:;">加入购物车</a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <img src="images/10.jpg" alt="DAZZLE地素 新款 俏皮印花直筒圆领宽" width="220" height="220">
+                </a>
+                <p class="s-price"><span>2910</span>￥</p>
+                <p class="s-title">DAZZLE地素 新款 俏皮印花直筒圆领宽</p>
+                <a class="s-add" href="javascript:;">加入购物车</a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <img src="images/11.jpg" alt="真丝中长a字打底假两件套" width="220" height="220">
+                </a>
+                <p class="s-price"><span>640</span>￥</p>
+                <p class="s-title">真丝中长a字打底假两件套</p>
+                <a class="s-add" href="javascript:;">加入购物车</a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <img src="images/12.jpg" alt="艾格 Weekend 2017 春新品衬衫翻领" width="220" height="220">
+                </a>
+                <p class="s-price"><span>568</span>￥</p>
+                <p class="s-title">艾格 Weekend 2017 春新品衬衫翻领</p>
+                <a class="s-add" href="javascript:;">加入购物车</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="car" id="tmall-car">
+        <div class="c-tools">
+            <a href="javascript:;">
+                <i class="c-icon"></i>
+                <span class="c-text">购物车</span>
+            </a>
+        </div>
+        <div class="c-con" >
+            <ul id="c-car-con">
+
+            </ul>
+            <a href="javascript:;" class="c-btn">
+                结算
+            </a>
+        </div>
+    </div>
+<script type="text/javascript" src="js/jquery-3.2.0.slim.min.js"></script>
+<script>
+    $(function () {
+        $(".s-add").click(function (e) {
+            var s_price = $(this).parent().find(".s-price span").text();
+            var s_src = $(this).parent().find("img").attr("src");
+
+            $("#c-car-con").append( "<li>" +
+                                        "<a href='#'>" +
+                                            "<img src='"+s_src+"' alt='描述' width='50' height='50'>"+
+                                        "</a>"+
+                                        "<span>优惠价 "+s_price+"￥</span>"+
+                                    "</li>")
+        })
+        
+        $("#tmall-car").click(function (e) {
+            if($(this).css("right")=="0px"){
+                $(this).css("right","-225px");
+            }else{
+                $(this).css("right","0px");
+            }
+        })
+    })
+</script>
+</body>
+</html>

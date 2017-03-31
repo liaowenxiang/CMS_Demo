@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html charset=utf-8" >
+    <meta name="Keywords" content="批量导入">
+    <meta name="Description" content="大数据批量导入">
+    <title>大数据批量导入</title>
+    <style type="text/css">
+        *{margin: 0px}
+        h1{font-size: 20px;font-family: 微软雅黑;text-align: center}
+        .qrcode{  width: 400px;height: 400px;margin: 200px auto;  }
+        .qrcode .text{
+            width: 400px;height: 100px;outline: none;margin-top: 20px;
+        }
+        .qrcode .btn{
+            width: 400px;height: 30px;margin-top: 20px;border: none;border-radius: 3px;
+            box-shadow: 1px 1px 1px #000;
+        }
+
+    </style>
+</head>
+<body>
+    <form action="qrcode.jsp" method="post">
+        <div class="qrcode">
+            <h1>输入你想说的话，生成二维码</h1>
+            <textarea class="text"></textarea>
+            <input type="submit" class="btn" value="生成二维码"/>
+        </div>
+    </form>
+</body>
+</html>
